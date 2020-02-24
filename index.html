@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CURB-Calculator</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+</html>
+
+<script>
+  var points = 0;
+
+  window.onload = function () { Check() } /* To print Mortality and Treatment text on first load */
+
+  function Sub() { /* For subtracting points, Prints new result and starts check */
+    points--;
+    document.getElementById("results").innerHTML = points;
+    Check()
+  }
+
+  function Add() { /* For adition of points, Prints new result and starts check */
+    points++;
+    document.getElementById("results").innerHTML = points;
+    Check()
+  }
+
+  function Check() { /* Checking how many points and prints the approproate text */
+    if(points == 0) { Txt0() }
+    else if(points == 1) { Txt1() }
+    else if(points == 2) { Txt2() }
+    else if(points == 3) { Txt3() }
+    else if(points == 4) { Txt4() }
+    else if(points == 5) { Txt4() }
+  }
+
+  function Txt0() { /* Text for 0 Points */
+    document.getElementById("Mortality").innerHTML = "Low risk group: 0.6% 30-day mortality.";
+    document.getElementById("Treatment").innerHTML = "Consider outpatient treatment.";
+  }
+
+  function Txt1() { /* Text for 1 Point */
+    document.getElementById("Mortality").innerHTML = "Low risk group: 2.7% 30-day mortality.";
+    document.getElementById("Treatment").innerHTML = "Consider outpatient treatment.";
+  }
+
+  function Txt2() { /* Text for 2 Points */
+    document.getElementById("Mortality").innerHTML = "Moderate risk group: 6.8% 30-day mortality.";
+    document.getElementById("Treatment").innerHTML = "Consider inpatient treatment or outpatient with close followup.";
+  }
+
+  function Txt3() { /* Text for 3 Points */
+    document.getElementById("Mortality").innerHTML = "Severe risk group: 14.0% 30-day mortality.";
+    document.getElementById("Treatment").innerHTML = "Consider inpatient treatment with possible intensive care admission.";
+  }
+
+  function Txt4() { /* Text for 4-5 Points */
+    document.getElementById("Mortality").innerHTML = "Highest risk group: 27.8% 30-day mortality.";
+    document.getElementById("Treatment").innerHTML = "Consider inpatient treatment with possible intensive care admission.";
+  }  
+
+</script>
