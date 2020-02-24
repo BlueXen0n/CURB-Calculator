@@ -32,13 +32,22 @@
   }
 
   function Check() { /* Checking how many points and prints the approproate text */
-    if(points == 0) { Txt0() }
-    else if(points == 1) { Txt1() }
-    else if(points == 2) { Txt2() }
-    else if(points == 3) { Txt3() }
-    else if(points == 4) { Txt4() }
-    else if(points == 5) { Txt4() }
-  }
+    switch (points) {
+      case 0: Txt0()
+        break;
+      case 1: Txt1()
+        break;
+      case 2: Txt2()
+        break;
+      case 3: Txt3()
+        break;
+      case 4: Txt4()
+        break;
+      case 5: Txt4()
+        break;
+      default:
+        console.log('ERROR: Points out of range.');
+  }}
 
   function Txt0() { /* Text for 0 Points */
     document.getElementById("Mortality").innerHTML = "Low risk group: 0.6% 30-day mortality.";
